@@ -11,14 +11,19 @@ require (
 	github.com/go-openapi/swag v0.21.1
 	github.com/go-openapi/validate v0.21.0
 	github.com/google/uuid v1.3.0
-	github.com/nspcc-dev/neo-go v0.99.2
-	github.com/nspcc-dev/neofs-api-go/v2 v2.13.2-0.20221005093543-3a91383f24a9
+	github.com/nspcc-dev/neo-go v0.99.4
+	github.com/nspcc-dev/neofs-api-go/v2 v2.14.0
 	github.com/nspcc-dev/neofs-sdk-go v1.0.0-rc.6.0.20221007102402-8c682641bfd2
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.8.0
 	github.com/testcontainers/testcontainers-go v0.13.0
-	go.uber.org/zap v1.18.1
+	go.uber.org/zap v1.23.0
 	golang.org/x/net v0.0.0-20220403103023-749bd193bc2b
+)
+
+replace (
+	github.com/nspcc-dev/neofs-api-go/v2 v2.14.0 => github.com/alexvanin/neofs-api-go/v2 v2.11.2-0.20221024123155-064c02a661b3
+	github.com/nspcc-dev/neofs-sdk-go v1.0.0-rc.6.0.20221007102402-8c682641bfd2 => github.com/alexvanin/neofs-sdk-go v0.0.0-20221024161352-a12ddeb1dac6
 )
 
 require (
@@ -88,10 +93,9 @@ require (
 	github.com/urfave/cli v1.22.5 // indirect
 	go.mongodb.org/mongo-driver v1.8.4 // indirect
 	go.opencensus.io v0.23.0 // indirect
-	go.uber.org/atomic v1.9.0 // indirect
-	go.uber.org/multierr v1.6.0 // indirect
+	go.uber.org/atomic v1.10.0 // indirect
+	go.uber.org/multierr v1.8.0 // indirect
 	golang.org/x/crypto v0.0.0-20220214200702-86341886e292 // indirect
-	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect

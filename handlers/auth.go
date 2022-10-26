@@ -15,6 +15,7 @@ import (
 	"github.com/nspcc-dev/neofs-rest-gw/gen/restapi/operations"
 	"github.com/nspcc-dev/neofs-rest-gw/internal/util"
 	neofsecdsa "github.com/nspcc-dev/neofs-sdk-go/crypto/ecdsa"
+	"github.com/nspcc-dev/neofs-sdk-go/eacl"
 	"github.com/nspcc-dev/neofs-sdk-go/pool"
 	"github.com/nspcc-dev/neofs-sdk-go/user"
 )
@@ -130,6 +131,10 @@ func prepareObjectToken(ctx context.Context, params objectTokenParams, pool *poo
 	if err != nil {
 		return nil, fmt.Errorf("couldn't transform token to native: %w", err)
 	}
+
+	// todo: add new param (to swagger spec) to set impersonate flag
+	btoken.SetEACLTable(*eacl.NewTable())
+	btoken.SetImpersonate(true)
 
 	if !params.XBearerForAllUsers {
 		btoken.ForUser(owner)
